@@ -1,332 +1,300 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My Computer Science Portfolio</title>
-
-    <style>
-    * {
-        box-sizing: border-box;
-        margin: 0;
-        padding: 0;
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Computer Science capstone ePortfolio showcasing software engineering, algorithms, databases, and professional growth.">
+  <title>Computer Science ePortfolio | SNHU</title>
+  <style>
+    :root {
+      --blush: #fff8f8;
+      --pale-pink: #f8e8ed;
+      --powder-pink: #f3dce5;
+      --rose: #c58a9f;
+      --dusty-rose: #a96880;
+      --deep-rose: #75465a;
+      --plum: #49343f;
+      --white: #ffffff;
+      --border: #ead2dc;
+      --muted: #735d67;
     }
-
-    html {
-        scroll-behavior: smooth;
-    }
-
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; scroll-padding-top: 100px; }
     body {
-        font-family: Arial, Helvetica, sans-serif;
-        line-height: 1.7;
-        color: #49343F;
-        background: #FFF8F8;
+      font-family: Arial, Helvetica, sans-serif;
+      line-height: 1.7;
+      color: var(--plum);
+      background: var(--blush);
     }
-
+    a { color: var(--deep-rose); overflow-wrap: anywhere; }
+    a:focus-visible, button:focus-visible {
+      outline: 3px solid var(--dusty-rose); outline-offset: 3px;
+    }
     header {
-        background: #A96880;
-        color: #FFFFFF;
-        padding: 20px 8%;
+      background: var(--dusty-rose); color: var(--white);
+      padding: 18px max(6%, calc((100% - 1120px) / 2));
     }
-
-    header h1 {
-        font-size: 1.5rem;
-    }
-
-    nav {
-        display: flex;
-        flex-wrap: wrap;
-        gap: 22px;
-        margin-top: 12px;
-    }
-
-    nav a {
-        color: #FFF5F7;
-        text-decoration: none;
-    }
-
-    nav a:hover {
-        color: #F4D5DF;
-    }
-
+    .brand { font-size: 1.15rem; font-weight: 700; }
+    nav { display: flex; flex-wrap: wrap; gap: 10px 20px; margin-top: 10px; }
+    nav a { color: var(--white); text-decoration: none; font-size: .95rem; }
+    nav a:hover { text-decoration: underline; }
     .hero {
-        background: linear-gradient(135deg, #F9E6EB, #EBC6D2);
-        color: #583747;
-        padding: 85px 8%;
+      padding: 58px max(6%, calc((100% - 1120px) / 2));
+      background: linear-gradient(130deg, #f9e9ee 0%, #efcdd8 100%);
+      border-bottom: 1px solid var(--border);
     }
-
-    .hero h2 {
-        font-size: clamp(2.2rem, 5vw, 3.5rem);
-        line-height: 1.2;
-        margin-bottom: 20px;
-        color: #75465A;
-    }
-
-    .hero p {
-        max-width: 700px;
-        color: #654A57;
-        font-size: 1.1rem;
-    }
-
+    .eyebrow { color: var(--dusty-rose); font-size: .8rem; font-weight: 700; letter-spacing: .16em; text-transform: uppercase; }
+    h1, h2, h3 { line-height: 1.25; }
+    .hero h1 { color: var(--deep-rose); font-size: clamp(2.1rem, 5vw, 3.4rem); margin: 8px 0 16px; max-width: 800px; }
+    .hero p { max-width: 780px; font-size: 1.08rem; color: #654a57; }
     .button {
-        display: inline-block;
-        margin-top: 25px;
-        padding: 12px 20px;
-        background: #A96880;
-        color: #FFFFFF;
-        text-decoration: none;
-        border-radius: 5px;
-        font-weight: bold;
+      display: inline-block; margin: 20px 10px 0 0; padding: 10px 17px;
+      border-radius: 7px; text-decoration: none; font-weight: 700;
+      background: var(--dusty-rose); color: var(--white);
     }
-
-    .button:hover {
-        background: #8D5069;
+    .button.secondary { background: transparent; border: 1px solid var(--dusty-rose); color: var(--deep-rose); }
+    main { max-width: 1120px; padding: 36px 24px; margin: 0 auto; }
+    section { margin: 0 0 42px; }
+    .section-heading { color: var(--deep-rose); font-size: clamp(1.6rem, 3vw, 2rem); margin-bottom: 12px; }
+    .lead { color: var(--muted); max-width: 850px; margin-bottom: 20px; }
+    .self-assessment {
+      background: linear-gradient(135deg, #f8e8ed, #fffafa);
+      border: 1px solid var(--border); border-radius: 16px; padding: clamp(20px, 4vw, 36px);
+      box-shadow: 0 6px 20px rgba(117, 70, 90, .07);
     }
-
-    main {
-        max-width: 1050px;
-        margin: auto;
-        padding: 40px 24px;
+    .self-assessment h3 { color: var(--deep-rose); margin: 24px 0 8px; }
+    .self-assessment p + p { margin-top: 12px; }
+    .highlight {
+      border-left: 4px solid var(--rose); background: var(--white);
+      border-radius: 7px; padding: 17px 20px; margin-top: 18px;
     }
-
-    section {
-        margin-bottom: 50px;
-        scroll-margin-top: 20px;
-    }
-
-    section h2 {
-        color: #75465A;
-        font-size: 1.8rem;
-        margin-bottom: 16px;
-    }
-
-    section p + p {
-        margin-top: 12px;
-    }
-
-    .grid {
-        display: grid;
-        grid-template-columns:
-            repeat(auto-fit, minmax(230px, 1fr));
-        gap: 20px;
-        margin-top: 20px;
-    }
-
-    .card {
-        background: #FFFFFF;
-        border: 1px solid #EBD5DD;
-        border-radius: 9px;
-        padding: 24px;
-        box-shadow: 0 4px 14px rgba(117, 70, 90, 0.07);
-    }
-
-    .card h3 {
-        color: #8D5069;
-        margin-bottom: 10px;
-    }
-
-    .skills {
-        display: flex;
-        flex-wrap: wrap;
-        gap: 10px;
-        margin-top: 18px;
-    }
-
-    .skill {
-        background: #F3DDE5;
-        color: #75465A;
-        border: 1px solid #EBD0DB;
-        border-radius: 5px;
-        padding: 7px 12px;
-    }
-
-    a {
-        overflow-wrap: anywhere;
-    }
-
-    .text-link {
-        color: #944E6B;
-        font-weight: bold;
-    }
-
-    .text-link:hover {
-        color: #71364F;
-    }
-
-    footer {
-        background: #A96880;
-        color: #FFF5F7;
-        padding: 25px;
-        text-align: center;
-    }
-
+    .callout { margin-top: 20px; padding: 20px; border-radius: 10px; background: var(--dusty-rose); color: var(--white); }
+    .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(245px, 1fr)); gap: 18px; }
+    .card { background: var(--white); border: 1px solid var(--border); border-radius: 11px; padding: 22px; box-shadow: 0 4px 14px rgba(117,70,90,.045); }
+    .card h3 { color: var(--deep-rose); margin-bottom: 9px; }
+    .card p + p { margin-top: 10px; }
+    .tag { display: inline-block; background: var(--powder-pink); color: var(--deep-rose); border-radius: 20px; padding: 4px 10px; font-size: .82rem; margin: 4px 4px 0 0; }
+    .comparison { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 16px; margin: 18px 0; }
+    .comparison > div { border: 1px solid var(--border); background: var(--white); border-radius: 10px; padding: 20px; }
+    .comparison h3 { color: var(--deep-rose); margin-bottom: 8px; }
+    .placeholder { font-size: .93rem; color: var(--muted); background: #fff4f7; padding: 12px; border-radius: 7px; margin-top: 12px; }
+    .narrative-list { padding-left: 22px; }
+    .narrative-list li { margin: 8px 0; }
+    footer { background: var(--dusty-rose); color: var(--white); text-align: center; padding: 24px; }
+    footer p + p { margin-top: 4px; font-size: .9rem; }
     @media (max-width: 600px) {
-        .hero {
-            padding: 55px 7%;
-        }
-
-        nav {
-            gap: 12px;
-        }
+      header { padding: 16px 5%; }
+      .hero { padding: 42px 5%; }
+      main { padding: 28px 16px; }
+      nav { gap: 8px 14px; }
     }
-</style>
+  </style>
 </head>
-
 <body>
-
 <header>
-    <h1>Computer Science Portfolio</h1>
-
-    <nav aria-label="Main navigation">
-        <a href="#about">About</a>
-        <a href="#skills">Skills</a>
-        <a href="#projects">Projects</a>
-        <a href="#growth">My Growth</a>
-    </nav>
+  <div class="brand">Computer Science ePortfolio</div>
+  <nav aria-label="Main navigation">
+    <a href="#self-assessment">Self-Assessment</a>
+    <a href="#code-review">Code Review</a>
+    <a href="#software">Software Engineering</a>
+    <a href="#algorithms">Algorithms</a>
+    <a href="#database">Databases</a>
+  </nav>
 </header>
 
 <div class="hero">
-    <h2>Building Solutions Through Technology</h2>
-
-    <p>
-        Welcome to my computer science portfolio.
-        I have completed my Bachelor of Science in Computer
-        Science with an emphasis in Information Security at Southern New Hampshire University.
-        This portfolio highlights my technical skills,
-        academic projects, and growth as a technology professional.
-    </p>
-
-    <a href="#projects" class="button">Explore My Work</a>
+  <p class="eyebrow">Learn · Build · Grow</p>
+  <h1>Computer Science Capstone Portfolio</h1>
+  <p>
+    Welcome to my Southern New Hampshire University Computer Science ePortfolio.
+    This portfolio reflects my development as a computer science student and presents
+    my work in software design and engineering, algorithms and data structures, and databases.
+  </p>
+  <a class="button" href="#self-assessment">Read My Self-Assessment</a>
+  <a class="button secondary" href="#artifacts">Explore My Artifacts</a>
 </div>
 
 <main>
+  <!-- The professional self-assessment is intentionally the first main section. -->
+  <section id="self-assessment">
+    <p class="eyebrow">01 · Introduction</p>
+    <h2 class="section-heading">Professional Self-Assessment</h2>
+    <div class="self-assessment">
+      <p>
+        When I first started out in the computer science program, I felt very unsure about my
+        skills and how far I could get as a student. I thought that there were many others who had
+        far more experience and understanding than I did and it was very intimidating. As time went
+        on and I was introduced to more topics, I realized that I really had an interest in the work
+        I was doing and would go beyond just the assignments given and create my own projects.
+      </p>
 
-    <section id="about">
-        <h2>About Me</h2>
+      <h3>Collaboration and Communication</h3>
+      <p>
+        My coursework created a solid foundation for understanding the possibilities of technology.
+        Collaborating in a team environment strengthened my interpersonal skills and helped prepare
+        me to contribute to a professional team. In my Agile methodology coursework, I learned to
+        create and understand requirements documents and communicate those requirements to others.
+        Exercises involving stakeholder communication helped me practice gathering requirements
+        and considering what people need from a software solution.
+      </p>
 
+      <h3>Software Engineering and Problem Solving</h3>
+      <p>
+        Learning about the software development lifecycle refined my approach to creating
+        applications. I moved from approaching applications without a clear plan toward gathering
+        requirements, planning, testing, and considering deployment and security. Understanding
+        why these steps matter has helped me think more deliberately about how software is built,
+        maintained, and used.
+      </p>
+
+      <h3>Security, Data, and Continued Learning</h3>
+      <p>
+        Security is an important consideration in my development work, particularly as I explore
+        information security alongside software development. My inventory application enhancement
+        gives me an opportunity to demonstrate how application functionality, authentication,
+        and database design can work together. I am continuing to strengthen my ability to explain
+        technical decisions and connect implementation choices to the needs of users.
+      </p>
+
+      <h3>How the Capstone Artifacts Fit Together</h3>
+      <p>
+        My capstone work centers on an inventory management application that began as an Android
+        application written in Java and is being enhanced as a Python application using SQLite.
+        The software engineering component presents the application redesign and implementation.
+        The algorithms and data structures component will explain the actual data-handling and
+        search logic used in the application. The database component will present the SQLite schema
+        and database operations. Together, these views are intended to show how application design,
+        program logic, and data persistence contribute to a complete software solution.
+      </p>
+
+      <div class="callout">
+        <h3 style="color:#fff; margin:0 0 8px;">Professional Goals</h3>
         <p>
-            My background in computer science has allowed me
-            to explore software development, database systems,
-            algorithms, and information security. I enjoy
-            breaking down complex problems and developing
-            practical, reliable solutions through technology.
+          As I move into the technology field, I want to keep building practical software skills,
+          strengthen my security-conscious approach to development, and continue learning new
+          tools and techniques. I aim to create useful, maintainable solutions while communicating
+          clearly with teammates and the people who will use them.
         </p>
+      </div>
+    </div>
+  </section>
 
-        <p>
-            As I prepare to enter the technology industry,
-            I am continuing to strengthen my programming,
-            analytical thinking, and problem-solving abilities.
-        </p>
-    </section>
+  <section id="code-review">
+    <p class="eyebrow">02 · Walkthrough</p>
+    <h2 class="section-heading">Informal Code Review</h2>
+    <p class="lead">
+      The code review features my original artifact version before enhancements along with suggested and planned improvements.
+    </p>
+    <div class="card">
+      <h3>Code Review Video</h3>
+      <video controls preload="metadata" style="width:100%; max-width:900px; border-radius:12px;">
+  <source src=""C:\Users\joann\Videos\Screen Recordings\CodeReview.mp4"" type="video/mp4">
+</video>
+    </div>
+  </section>
 
-    <section id="skills">
-        <h2>Technical Skills</h2>
+  <section id="artifacts">
+    <p class="eyebrow">03 · Capstone Work</p>
+    <h2 class="section-heading">Artifacts and Enhancements</h2>
+    <p class="lead">
+      The original and enhanced versions should be easy to inspect. Add links to the actual source
+      files, screenshots, or browser-readable code pages in your repository when they are ready.
+    </p>
 
-        <p>
-            Technologies and concepts I have studied and
-            applied through coursework and projects include:
-        </p>
-
-        <div class="skills">
-            <span class="skill">Python</span>
-            <span class="skill">C++</span>
-            <span class="skill">Java</span>
-            <span class="skill">SQL</span>
-            <span class="skill">Object-Oriented Programming</span>
-            <span class="skill">Data Structures</span>
-            <span class="skill">Algorithms</span>
-            <span class="skill">Database Design</span>
-            <span class="skill">Git and GitHub</span>
-            <span class="skill">Information Security</span>
-            <span class="skill">Software Testing</span>
-            <span class="skill">Problem Solving</span>
+    <div id="software" class="card" style="margin-bottom:18px;">
+      <h3>Software Design and Engineering</h3>
+      <p>
+        <strong>Artifact:</strong> Inventory management application, originally developed for Android
+        in Java and enhanced as a Python application using SQLite.
+      </p>
+      <div class="comparison">
+        <div>
+          <h3>Original Artifact</h3>
+          <p>The original Android application supported creating, adding, updating, and deleting inventory items.</p>
+          <p class="placeholder">Add a link to the original source code and/or a screenshot of the original application.</p>
         </div>
-    </section>
-
-    <section id="projects">
-        <h2>Selected Projects</h2>
-
-        <p>
-            My academic projects have provided opportunities
-            to apply programming concepts, design software,
-            work with data, and solve technical problems.
-        </p>
-
-        <div class="grid">
-
-            <article class="card">
-                <h3>Inventory Management Application</h3>
-                <p>
-                    An application focused on managing inventory,
-                    tracking quantities, and handling user
-                    interactions with stored information. Enhanced security features
-                    include user authentication.
-                </p>
-                <p>
-                    <strong>Skills:</strong>
-                    Application development, data management,
-                    database operations, user security.
-                </p>
-            </article>
-
-            <article class="card">
-                <h3>Web Application Development</h3>
-                <p>
-                    A web development project involving
-                    application structure, server-side
-                    functionality, and data integration.
-                </p>
-                <p>
-                    <strong>Skills:</strong>
-                    Software design, web development,
-                    and debugging.
-                </p>
-            </article>
-
-            <article class="card">
-                <h3>Database and Data Analysis</h3>
-                <p>
-                    Coursework involving database queries,
-                    data organization, and using structured
-                    information to solve practical problems.
-                </p>
-                <p>
-                    <strong>Skills:</strong>
-                    SQL, database concepts, and analytical thinking.
-                </p>
-            </article>
-
+        <div>
+          <h3>Enhanced Artifact</h3>
+          <p>The enhanced version is being developed in Python with SQLite, including a login and inventory management functionality.</p>
+          <p class="placeholder">Add a link to the final Python source files, database code, and any screenshots or demonstration.</p>
         </div>
-    </section>
+      </div>
+      <h3>Enhancement Narrative</h3>
+      <p>
+        Explain why this artifact was selected, how the redesign and language transfer were approached,
+        what changed, which skills the implementation demonstrates, what challenges or feedback
+        influenced the work, and which course outcomes are supported by evidence.
+      </p>
+      <p class="placeholder">Replace this guidance with your completed software design and engineering narrative.</p>
+    </div>
 
-    <section id="growth">
-        <h2>Professional Growth</h2>
+    <div id="algorithms" class="card" style="margin-bottom:18px;">
+      <h3>Algorithms and Data Structures</h3>
+      <p>
+        This section should focus on the actual algorithms, data structures, and search or inventory
+        operations implemented in your application. Describe the code you wrote and how it works.
+      </p>
+      <div class="comparison">
+        <div>
+          <h3>Original Implementation</h3>
+          <p class="placeholder">Link to or display the relevant original logic and explain its behavior.</p>
+        </div>
+        <div>
+          <h3>Enhanced Implementation</h3>
+          <p class="placeholder">Link to or display the corresponding enhanced logic. Explain the specific changes without claiming unmeasured performance gains.</p>
+        </div>
+      </div>
+      <h3>Enhancement Narrative</h3>
+      <p class="placeholder">Add your narrative covering the implementation, learning, challenges, feedback, demonstrated skills, and relevant course outcomes.</p>
+    </div>
 
-        <p>
-            Throughout my degree, I have developed a stronger
-            understanding of how software is designed,
-            implemented, tested, and maintained. Working
-            through programming assignments and larger
-            projects after learning the software development 
-            lifecycle has helped me become more organized
-            in analyzing problems and creating solutions.
-        </p>
+    <div id="database" class="card">
+      <h3>Databases</h3>
+      <p>
+        This section presents the SQLite database used by the enhanced inventory application,
+        including its schema, data relationships, and database operations.
+      </p>
+      <div class="comparison">
+        <div>
+          <h3>Original Data Storage</h3>
+          <p class="placeholder">Describe and link to the original database design and operations.</p>
+        </div>
+        <div>
+          <h3>Enhanced SQLite Database</h3>
+          <p class="placeholder">Show the actual SQLite schema and operations, with links to relevant source files or screenshots.</p>
+        </div>
+      </div>
+      <h3>Enhancement Narrative</h3>
+      <p class="placeholder">Add your narrative about the database design, implementation decisions, challenges, learning, and relevant course outcomes.</p>
+    </div>
+  </section>
 
-        <p>
-            My studies have also helped me appreciate the
-            importance of secure coding, organized data,
-            maintainable software, and continuous learning.
-            I plan to keep building these skills as I pursue
-            more opportunities that come my way.
-        </p>
-    </section>
-
+  <section id="skills">
+    <p class="eyebrow">04 · Technical Profile</p>
+    <h2 class="section-heading">Technical Skills</h2>
+    <p class="lead">Skills to showcase with concrete examples from coursework and projects.</p>
+    <div>
+      <span class="tag">Python</span>
+      <span class="tag">Java</span>
+      <span class="tag">SQL / SQLite</span>
+      <span class="tag">Object-Oriented Programming</span>
+      <span class="tag">Software Development Lifecycle</span>
+      <span class="tag">Database Design</span>
+      <span class="tag">Algorithms and Data Structures</span>
+      <span class="tag">Application Authentication</span>
+      <span class="tag">Git and GitHub</span>
+      <span class="tag">Testing and Debugging</span>
+    </div>
+    <p class="placeholder">
+      Keep only the skills you can support with examples, code, or coursework. Add other relevant
+      languages and tools you have actually used.
+    </p>
+  </section>
 </main>
 
 <footer>
-    <p>Computer Science ePortfolio</p>
-    <p>Southern New Hampshire University</p>
+  <p><strong>Computer Science ePortfolio</strong></p>
+  <p>Southern New Hampshire University · CS-499 Capstone</p>
 </footer>
-
 </body>
 </html>
