@@ -131,7 +131,6 @@
 </div>
 
 <main>
-  <!-- The professional self-assessment is intentionally the first main section. -->
   <section id="self-assessment">
     <p class="eyebrow">01 · Introduction</p>
     <h2 class="section-heading">Professional Self-Assessment</h2>
@@ -221,10 +220,6 @@
   <section id="artifacts">
     <p class="eyebrow">03 · Capstone Work</p>
     <h2 class="section-heading">Artifacts and Enhancements</h2>
-    <p class="lead">
-      The original and enhanced versions should be easy to inspect. Add links to the actual source
-      files, screenshots, or browser-readable code pages in your repository when they are ready.
-    </p>
 
     <div id="software" class="card" style="margin-bottom:18px;">
       <h3>Software Design and Engineering</h3>
@@ -236,68 +231,63 @@
         <div>
           <h3>Original Artifact</h3>
           <p>The original Android application supported creating, adding, updating, and deleting inventory items.</p>
-          <p class="placeholder">Add a link to the original source code and/or a screenshot of the original application.</p>
+          <p>
+  <a href="OriginalArtifacts.zip" download>
+    Download Original Android Project
+  </a>
+        </p>
         </div>
         <div>
           <h3>Enhanced Artifact</h3>
           <p>The enhanced version is being developed in Python with SQLite, including a login and inventory management functionality.</p>
-          <p class="placeholder">Add a link to the final Python source files, database code, and any screenshots or demonstration.</p>
+          <p>
+  <a href="UpdatedArtifacts.zip" download>
+    Download Enhanced Python + SQLite Project
+  </a>
+</p>
         </div>
       </div>
       <h3>Enhancement Narrative</h3>
-      <p>
-        Explain why this artifact was selected, how the redesign and language transfer were approached,
-        what changed, which skills the implementation demonstrates, what challenges or feedback
-        influenced the work, and which course outcomes are supported by evidence.
-      </p>
-      <p class="placeholder">Replace this guidance with your completed software design and engineering narrative.</p>
-    </div>
-
     <div id="algorithms" class="card" style="margin-bottom:18px;">
       <h3>Algorithms and Data Structures</h3>
       <p>
-        This section should focus on the actual algorithms, data structures, and search or inventory
-        operations implemented in your application. Describe the code you wrote and how it works.
-      </p>
-      <div class="comparison">
-        <div>
-          <h3>Original Implementation</h3>
-          <p class="placeholder">Link to or display the relevant original logic and explain its behavior.</p>
-        </div>
-        <div>
-          <h3>Enhanced Implementation</h3>
-          <p class="placeholder">Link to or display the corresponding enhanced logic. Explain the specific changes without claiming unmeasured performance gains.</p>
-        </div>
-      </div>
-      <h3>Enhancement Narrative</h3>
-      <p class="placeholder">Add your narrative covering the implementation, learning, challenges, feedback, demonstrated skills, and relevant course outcomes.</p>
-    </div>
-
-    <div id="database" class="card">
-      <h3>Databases</h3>
+        The artifact included in this enhancement is the database helper class for an Android inventory management application. 
+        This artifact was created a few months ago in my Android application development course, where I learned how to develop apps using Android Studio.
+        I selected this artifact as a whole because it demonstrates my ability to create an application that provides innovative and efficient
+        technology to users while highlighting my software development techniques. The component that showcases my software development skills 
+        the most within the inventory management artifact is the structure and efficiency of the artifact. I kept good coding practices by gathering 
+        requirements, creating a plan, and writing code and testing before pushing it out. The artifact was improved by porting the database helper 
+        class from a Java-based class into a Python class that utilizes SQL for its database.
+        I did meet the course outcomes I planned in module one. I planned on porting the language 
+        from java android based to python based in order to show that I am able to design database 
+        in a vartiety of different environments and improve my codes efficiency. Through the enhancement of porting into Python I learned 
+        that different database operations remain pretty similar across different databases and languages, which makes it easier to 
+        understand how and why they work. One challenge I faced was converting the SQLite specific portions of code into MySql because of the difference in them.
+</p>
+<h3>Software Design and Engineering</h3>
       <p>
-        This section presents the SQLite database used by the enhanced inventory application,
-        including its schema, data relationships, and database operations.
-      </p>
-      <div class="comparison">
-        <div>
-          <h3>Original Data Storage</h3>
-          <p class="placeholder">Describe and link to the original database design and operations.</p>
-        </div>
-        <div>
-          <h3>Enhanced SQLite Database</h3>
-          <p class="placeholder">Show the actual SQLite schema and operations, with links to relevant source files or screenshots.</p>
-        </div>
-      </div>
-      <h3>Enhancement Narrative</h3>
-      <p class="placeholder">Add your narrative about the database design, implementation decisions, challenges, learning, and relevant course outcomes.</p>
+        The artifacts added to this milestone are the login activity and main activity classes for my Python-based inventory management application. 
+        These artifacts were originally created months ago as Java-based classes for an Android inventory management application. They control the 
+        various login features for the inventory management database, where users can access inventory operations for their account.
+        I am including these artifacts in my ePortfolio as they show my integration of security features in an application, as well as database integration 
+        for a software application. I think that showcasing all-around skills involved in software development will create a strong profile for myself 
+        in both cybersecurity and software engineering aspects. For my enhancement focusing on algorithms and data structures, I turned the original array 
+        list used for the inventory into a class. This was done for better calculation efficiency, as dictionary lookup by key has an average 
+        constant-time complexity of O(1), which makes this data structure more efficient for direct item lookups as the inventory grows. 
+        These enhancements meet the course outcomes previously planned, as they utilize more efficient algorithms and data structures to improve the 
+        functionality of the application. Making the application's functionality better allows for improved use by users, making their experience more 
+        seamless. One important thing I learned was that data structures should be selected based on how data needs to be accessed and manipulated. 
+        Changing the inventory representation from a list of formatted strings to a dictionary of structured records made the purpose of the data clearer 
+        and allowed individual inventory items to be accessed using their IDs. This was a bit of a struggle to translate from JavaScript to Python, 
+        but I was able to figure it out eventually.
+</p>
+      
     </div>
   </section>
 
   <section id="skills">
     <p class="eyebrow">04 · Technical Profile</p>
     <h2 class="section-heading">Technical Skills</h2>
-    <p class="lead">Skills to showcase with concrete examples from coursework and projects.</p>
     <div>
       <span class="tag">Python</span>
       <span class="tag">Java</span>
@@ -310,10 +300,6 @@
       <span class="tag">Git and GitHub</span>
       <span class="tag">Testing and Debugging</span>
     </div>
-    <p class="placeholder">
-      Keep only the skills you can support with examples, code, or coursework. Add other relevant
-      languages and tools you have actually used.
-    </p>
   </section>
 </main>
 
