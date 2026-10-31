@@ -3,23 +3,23 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Joanna Higareda's computer science portfolio featuring software development, full-stack applications, databases, and technical projects.">
-  <meta name="theme-color" content="#172b3a">
+  <meta name="description" content="Joanna Higareda's computer science portfolio featuring software development, full-stack applications, databases, and information security projects.">
+  <meta name="theme-color" content="#18334d">
   <title>Joanna Higareda | Software Development Portfolio</title>
   <style>
     :root {
-      --navy: #172b3a;
-      --navy-2: #213d4d;
-      --teal: #4f817d;
-      --teal-dark: #35645f;
-      --sage: #e8f0ed;
-      --cream: #f7f7f3;
+      --navy: #18334d;
+      --navy-2: #315b78;
+      --teal: #5f91a8;
+      --teal-dark: #35647d;
+      --sage: #e8eff2;
+      --cream: #f7f2e9;
       --paper: #ffffff;
       --ink: #24323b;
       --muted: #66747b;
-      --line: #dce4e2;
-      --soft: #f0f4f2;
-      --accent: #c58d79;
+      --line: #dce3e7;
+      --soft: #edf2f4;
+      --accent: #d39b78;
       --shadow: 0 12px 34px rgba(23, 43, 58, .08);
       --radius: 16px;
     }
@@ -42,7 +42,7 @@
       position: sticky;
       top: 0;
       z-index: 20;
-      background: rgba(23, 43, 58, .97);
+      background: rgba(24, 51, 77, .97);
       color: white;
       box-shadow: 0 4px 18px rgba(0,0,0,.12);
     }
@@ -79,7 +79,8 @@
     .hero {
       color: white;
       background:
-        radial-gradient(circle at 85% 20%, rgba(79,129,125,.34), transparent 28%),
+        radial-gradient(circle at 88% 18%, rgba(211,155,120,.30), transparent 22%),
+        radial-gradient(circle at 72% 100%, rgba(95,145,168,.30), transparent 34%),
         linear-gradient(120deg, var(--navy) 0%, var(--navy-2) 100%);
       padding: 76px 26px 82px;
     }
@@ -155,17 +156,6 @@
     }
     .highlight h3 { margin: 0 0 8px; }
 
-    .video-card {
-      max-width: 900px;
-      padding: 22px;
-      border: 1px solid var(--line);
-      border-radius: var(--radius);
-      background: white;
-      box-shadow: var(--shadow);
-    }
-    .video-card h3 { color: var(--navy); margin-bottom: 12px; }
-    .video-container { width: 100%; aspect-ratio: 16 / 9; }
-    .video-container iframe { width: 100%; height: 100%; border: 0; border-radius: 10px; }
 
     .project-intro {
       display: flex;
@@ -184,7 +174,7 @@
       margin: 22px 0 18px;
       border: 1px solid var(--line);
       border-radius: 12px;
-      background: #edf1ef;
+      background: #edf2f4;
     }
     .tab-button {
       border: 1px solid transparent;
@@ -244,7 +234,7 @@
       padding: 18px;
       border: 1px solid var(--line);
       border-radius: 11px;
-      background: #fbfcfb;
+      background: #fbfaf7;
     }
     .subcard h4 { margin-bottom: 7px; color: var(--navy); font-size: 1rem; }
     .subcard p { color: var(--muted); font-size: .94rem; }
@@ -252,10 +242,10 @@
     .tag {
       display: inline-block;
       padding: 5px 10px;
-      border: 1px solid #d5e3df;
+      border: 1px solid #d4e1e8;
       border-radius: 30px;
-      background: #f0f6f3;
-      color: #365f5a;
+      background: #eef4f6;
+      color: #315b78;
       font-size: .82rem;
       font-weight: 600;
     }
@@ -276,6 +266,10 @@
     }
     .skill-card h3 { color: var(--navy); font-size: 1.02rem; margin-bottom: 8px; }
     .skill-card p { color: var(--muted); font-size: .94rem; }
+    .hero-note { margin-top: 24px; color: #d9e5e9; font-size: .88rem; letter-spacing: .04em; }
+    .hero-note span { color: #e4b18d; padding: 0 7px; }
+    .button.secondary-light { border-color: #9eb6c3; background: transparent; color: var(--navy); }
+    .button.secondary-light:hover { background: #e2ebef; }
     footer {
       padding: 28px 20px;
       background: var(--navy);
@@ -310,7 +304,6 @@
       <a class="brand" href="#top">Joanna Higareda <span aria-hidden="true">|</span> Portfolio</a>
       <nav class="main-nav" aria-label="Main navigation">
         <a href="#about">About</a>
-        <a href="#code-review">Code Review</a>
         <a href="#projects">Projects</a>
         <a href="#skills">Technical Skills</a>
       </nav>
@@ -320,15 +313,16 @@
   <div class="hero" id="top">
     <div class="hero-inner">
       <p class="eyebrow">Computer Science · Information Security</p>
-      <h1>Building practical solutions through software and technology.</h1>
+      <h1>Thoughtful problem-solving. Practical software. Secure foundations.</h1>
       <p class="hero-copy">
-        Welcome to my computer science portfolio. This collection highlights my academic and
-        independent project work in application development, full-stack web technologies,
-        databases, algorithms, and secure software fundamentals.
+        I am completing my computer science degree with a focus on software development and information
+        security. Explore selected projects that demonstrate how I approach application design,
+        data, debugging, and the connections between reliable software and security.
       </p>
+      <p class="hero-note">Software Development <span>✦</span> Information Security <span>✦</span> Lifelong Learner</p>
       <div class="hero-actions">
         <a class="button" href="#projects">Explore Projects</a>
-        <a class="button secondary" href="#about">Read My Background</a>
+        <a class="button secondary" href="#skills">View Technical Skills</a>
       </div>
     </div>
   </div>
@@ -339,11 +333,12 @@
       <h2 class="section-heading">Professional Self-Assessment</h2>
       <div class="panel">
         <p>
-          When I first started the computer science program, I was unsure of my skills and how far
-          I could go. I assumed that many other students had much more experience, which made the
-          field feel intimidating at first. As I was introduced to new topics, I realized how much
-          I enjoyed the work. I often became interested in going beyond the assignments and
-          exploring how I could apply what I was learning to my own projects.
+          My computer science education has given me a practical foundation in software
+          development, database systems, application architecture, and information security.
+          Throughout the program, I became especially interested in understanding how the pieces
+          of an application work together—from the user interface and business logic to the API
+          and the data layer. I enjoy taking a problem apart, learning the tools needed to address
+          it, and testing the result until the application behaves as expected.
         </p>
 
         <h3>Collaboration and Communication</h3>
@@ -367,11 +362,11 @@
 
         <h3>Security, Data, and Continued Learning</h3>
         <p>
-          My Information Security concentration has helped me recognize the importance of
-          considering security alongside application functionality. Projects involving user
-          authentication, database operations, and protected application features have helped me
-          connect these concepts to software development. I am continuing to strengthen my
-          technical skills and become more confident learning unfamiliar tools and frameworks.
+          My Information Security concentration has reinforced the importance of considering
+          security throughout the development process—not as an afterthought. Through coursework,
+          I have explored authentication, access control, cryptographic concepts, risk mitigation,
+          and secure communication. I understand that these are foundational skills I will
+          continue developing through hands-on work and professional experience.
         </p>
 
         <h3>How My Projects Fit Together</h3>
@@ -397,29 +392,8 @@
       </div>
     </section>
 
-    <section id="code-review">
-      <p class="eyebrow">02 · Walkthrough</p>
-      <h2 class="section-heading">Code Review</h2>
-      <p class="lead">
-        This walkthrough introduces my original inventory application and discusses the code,
-        design decisions, and areas I considered during the enhancement process.
-      </p>
-      <div class="video-card">
-        <h3>CS-499 Informal Code Review</h3>
-        <div class="video-container">
-          <iframe
-            src="https://www.youtube.com/embed/ZbKSRdeBOOM"
-            title="CS-499 Informal Code Review"
-            loading="lazy"
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-            allowfullscreen>
-          </iframe>
-        </div>
-      </div>
-    </section>
-
     <section id="projects">
-      <p class="eyebrow">03 · Selected Work</p>
+      <p class="eyebrow">02 · Selected Work</p>
       <div class="project-intro">
         <div>
           <h2 class="section-heading">Project Portfolio</h2>
@@ -650,7 +624,7 @@
     </section>
 
     <section id="skills">
-      <p class="eyebrow">04 · Technical Profile</p>
+      <p class="eyebrow">03 · Technical Profile</p>
       <h2 class="section-heading">Technical Skills</h2>
       <p class="lead">
         Technologies and concepts represented across my coursework and portfolio projects.
@@ -684,9 +658,10 @@
     </section>
   </main>
 
+
   <footer>
-    <p><strong>Joanna Higareda</strong> · Computer Science Portfolio</p>
-    <p>Southern New Hampshire University · Computer Science Capstone</p>
+    <p><strong>Joanna Higareda</strong> · Software Development &amp; Information Security</p>
+    <p>Computer Science Portfolio · Southern New Hampshire University</p>
   </footer>
 
   <script>
@@ -726,4 +701,3 @@
   </script>
 </body>
 </html>
-
