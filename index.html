@@ -3,308 +3,727 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Computer Science Capstone ePortfolio showcasing software engineering, algorithms, databases, and professional growth.">
-  <title>Computer Science ePortfolio | SNHU</title>
+  <meta name="description" content="Joanna Higareda's computer science portfolio featuring software development, full-stack applications, databases, and technical projects.">
+  <meta name="theme-color" content="#172b3a">
+  <title>Joanna Higareda | Software Development Portfolio</title>
   <style>
     :root {
-      --blush: #fff8f8;
-      --pale-pink: #f8e8ed;
-      --powder-pink: #f3dce5;
-      --rose: #c58a9f;
-      --dusty-rose: #a96880;
-      --deep-rose: #75465a;
-      --plum: #49343f;
-      --white: #ffffff;
-      --border: #ead2dc;
-      --muted: #735d67;
+      --navy: #172b3a;
+      --navy-2: #213d4d;
+      --teal: #4f817d;
+      --teal-dark: #35645f;
+      --sage: #e8f0ed;
+      --cream: #f7f7f3;
+      --paper: #ffffff;
+      --ink: #24323b;
+      --muted: #66747b;
+      --line: #dce4e2;
+      --soft: #f0f4f2;
+      --accent: #c58d79;
+      --shadow: 0 12px 34px rgba(23, 43, 58, .08);
+      --radius: 16px;
     }
+
     * { box-sizing: border-box; margin: 0; padding: 0; }
-    html { scroll-behavior: smooth; scroll-padding-top: 100px; }
+    html { scroll-behavior: smooth; scroll-padding-top: 92px; }
     body {
-      font-family: Arial, Helvetica, sans-serif;
+      font-family: Inter, "Segoe UI", Arial, sans-serif;
       line-height: 1.7;
-      color: var(--plum);
-      background: var(--blush);
+      color: var(--ink);
+      background: var(--cream);
     }
-    a { color: var(--deep-rose); overflow-wrap: anywhere; }
+    a { color: var(--teal-dark); overflow-wrap: anywhere; }
     a:focus-visible, button:focus-visible {
-      outline: 3px solid var(--dusty-rose); outline-offset: 3px;
+      outline: 3px solid var(--accent);
+      outline-offset: 3px;
     }
-    header {
-      background: var(--dusty-rose); color: var(--white);
-      padding: 18px max(6%, calc((100% - 1120px) / 2));
+
+    .site-header {
+      position: sticky;
+      top: 0;
+      z-index: 20;
+      background: rgba(23, 43, 58, .97);
+      color: white;
+      box-shadow: 0 4px 18px rgba(0,0,0,.12);
     }
-    .brand { font-size: 1.15rem; font-weight: 700; }
-    nav { display: flex; flex-wrap: wrap; gap: 10px 20px; margin-top: 10px; }
-    nav a { color: var(--white); text-decoration: none; font-size: .95rem; }
-    nav a:hover { text-decoration: underline; }
+    .header-inner {
+      max-width: 1160px;
+      margin: auto;
+      padding: 14px 26px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 22px;
+    }
+    .brand {
+      color: white;
+      font-weight: 700;
+      letter-spacing: .02em;
+      text-decoration: none;
+      white-space: nowrap;
+    }
+    .main-nav {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px 22px;
+      justify-content: flex-end;
+    }
+    .main-nav a {
+      color: #e8efef;
+      text-decoration: none;
+      font-size: .91rem;
+      font-weight: 500;
+    }
+    .main-nav a:hover { color: white; text-decoration: underline; text-underline-offset: 5px; }
+
     .hero {
-      padding: 58px max(6%, calc((100% - 1120px) / 2));
-      background: linear-gradient(130deg, #f9e9ee 0%, #efcdd8 100%);
-      border-bottom: 1px solid var(--border);
+      color: white;
+      background:
+        radial-gradient(circle at 85% 20%, rgba(79,129,125,.34), transparent 28%),
+        linear-gradient(120deg, var(--navy) 0%, var(--navy-2) 100%);
+      padding: 76px 26px 82px;
     }
-    .eyebrow { color: var(--dusty-rose); font-size: .8rem; font-weight: 700; letter-spacing: .16em; text-transform: uppercase; }
+    .hero-inner { max-width: 1108px; margin: auto; }
+    .eyebrow {
+      color: var(--teal);
+      font-size: .76rem;
+      font-weight: 800;
+      letter-spacing: .15em;
+      text-transform: uppercase;
+    }
+    .hero .eyebrow { color: #a9cfca; }
     h1, h2, h3 { line-height: 1.25; }
-    .hero h1 { color: var(--deep-rose); font-size: clamp(2.1rem, 5vw, 3.4rem); margin: 8px 0 16px; max-width: 800px; }
-    .hero p { max-width: 780px; font-size: 1.08rem; color: #654a57; }
+    .hero h1 {
+      max-width: 820px;
+      margin: 12px 0 18px;
+      font-size: clamp(2.45rem, 5.5vw, 4.25rem);
+      letter-spacing: -.04em;
+    }
+    .hero-copy {
+      max-width: 720px;
+      color: #dce7e8;
+      font-size: 1.12rem;
+    }
+    .hero-actions { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 28px; }
     .button {
-      display: inline-block; margin: 20px 10px 0 0; padding: 10px 17px;
-      border-radius: 7px; text-decoration: none; font-weight: 700;
-      background: var(--dusty-rose); color: var(--white);
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 45px;
+      padding: 10px 18px;
+      border: 1px solid var(--teal);
+      border-radius: 8px;
+      background: var(--teal);
+      color: white;
+      font-weight: 700;
+      text-decoration: none;
+      transition: transform .18s ease, background .18s ease;
     }
-    .button.secondary { background: transparent; border: 1px solid var(--dusty-rose); color: var(--deep-rose); }
-    main { max-width: 1120px; padding: 36px 24px; margin: 0 auto; }
-    section { margin: 0 0 42px; }
-    .section-heading { color: var(--deep-rose); font-size: clamp(1.6rem, 3vw, 2rem); margin-bottom: 12px; }
-    .lead { color: var(--muted); max-width: 850px; margin-bottom: 20px; }
-    .self-assessment {
-      background: linear-gradient(135deg, #f8e8ed, #fffafa);
-      border: 1px solid var(--border); border-radius: 16px; padding: clamp(20px, 4vw, 36px);
-      box-shadow: 0 6px 20px rgba(117, 70, 90, .07);
+    .button:hover { background: var(--teal-dark); transform: translateY(-1px); }
+    .button.secondary {
+      border-color: rgba(255,255,255,.45);
+      background: transparent;
+      color: white;
     }
-    .self-assessment h3 { color: var(--deep-rose); margin: 24px 0 8px; }
-    .self-assessment p + p { margin-top: 12px; }
+    .button.secondary:hover { background: rgba(255,255,255,.1); }
+
+    main { max-width: 1160px; margin: auto; padding: 54px 26px 70px; }
+    section { margin-bottom: 62px; }
+    .section-heading {
+      margin: 7px 0 12px;
+      color: var(--navy);
+      font-size: clamp(1.75rem, 3vw, 2.25rem);
+      letter-spacing: -.025em;
+    }
+    .lead { max-width: 820px; margin-bottom: 24px; color: var(--muted); }
+    .panel {
+      padding: clamp(22px, 4vw, 38px);
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      background: var(--paper);
+      box-shadow: var(--shadow);
+    }
+    .panel h3, .project-panel h3 { color: var(--navy); margin: 23px 0 8px; }
+    .panel h3:first-child { margin-top: 0; }
+    .panel p + p { margin-top: 13px; }
     .highlight {
-      border-left: 4px solid var(--rose); background: var(--white);
-      border-radius: 7px; padding: 17px 20px; margin-top: 18px;
+      margin-top: 24px;
+      padding: 20px 22px;
+      border-left: 4px solid var(--teal);
+      border-radius: 0 10px 10px 0;
+      background: var(--sage);
     }
-    .callout { margin-top: 20px; padding: 20px; border-radius: 10px; background: var(--dusty-rose); color: var(--white); }
-    .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(245px, 1fr)); gap: 18px; }
-    .card { background: var(--white); border: 1px solid var(--border); border-radius: 11px; padding: 22px; box-shadow: 0 4px 14px rgba(117,70,90,.045); }
-    .card h3 { color: var(--deep-rose); margin-bottom: 9px; }
-    .card p + p { margin-top: 10px; }
-    .tag { display: inline-block; background: var(--powder-pink); color: var(--deep-rose); border-radius: 20px; padding: 4px 10px; font-size: .82rem; margin: 4px 4px 0 0; }
-    .comparison { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 16px; margin: 18px 0; }
-    .comparison > div { border: 1px solid var(--border); background: var(--white); border-radius: 10px; padding: 20px; }
-    .comparison h3 { color: var(--deep-rose); margin-bottom: 8px; }
-    .placeholder { font-size: .93rem; color: var(--muted); background: #fff4f7; padding: 12px; border-radius: 7px; margin-top: 12px; }
-    .narrative-list { padding-left: 22px; }
-    .narrative-list li { margin: 8px 0; }
-    footer { background: var(--dusty-rose); color: var(--white); text-align: center; padding: 24px; }
-    footer p + p { margin-top: 4px; font-size: .9rem; }
-    @media (max-width: 600px) {
-      header { padding: 16px 5%; }
-      .hero { padding: 42px 5%; }
-      main { padding: 28px 16px; }
-      nav { gap: 8px 14px; }
+    .highlight h3 { margin: 0 0 8px; }
+
+    .video-card {
+      max-width: 900px;
+      padding: 22px;
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      background: white;
+      box-shadow: var(--shadow);
     }
-    
-.video-container {
-  width: 100%;
-  max-width: 900px;
-  aspect-ratio: 16 / 9;
-  margin: 1.5rem auto;
-}
+    .video-card h3 { color: var(--navy); margin-bottom: 12px; }
+    .video-container { width: 100%; aspect-ratio: 16 / 9; }
+    .video-container iframe { width: 100%; height: 100%; border: 0; border-radius: 10px; }
 
-.video-container iframe {
-  display: block;
-  width: 100%;
-  height: 100%;
-  border: none;
-  border-radius: 12px;
-}
+    .project-intro {
+      display: flex;
+      align-items: end;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 16px;
+      margin-bottom: 20px;
+    }
+    .project-intro .lead { margin: 0; }
+    .tab-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 9px;
+      padding: 8px;
+      margin: 22px 0 18px;
+      border: 1px solid var(--line);
+      border-radius: 12px;
+      background: #edf1ef;
+    }
+    .tab-button {
+      border: 1px solid transparent;
+      border-radius: 8px;
+      padding: 10px 16px;
+      background: transparent;
+      color: #526169;
+      font: inherit;
+      font-size: .94rem;
+      font-weight: 700;
+      cursor: pointer;
+      transition: background .18s ease, color .18s ease, box-shadow .18s ease;
+    }
+    .tab-button:hover { background: white; color: var(--navy); }
+    .tab-button[aria-selected="true"] {
+      background: var(--navy);
+      color: white;
+      box-shadow: 0 3px 10px rgba(23,43,58,.15);
+    }
+    .project-panel {
+      padding: clamp(22px, 4vw, 36px);
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      background: white;
+      box-shadow: var(--shadow);
+    }
+    .project-panel[hidden] { display: none; }
+    .project-panel h3:first-child { margin-top: 0; }
+    .project-title-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-bottom: 12px;
+    }
+    .project-title-row h3 { margin: 0; font-size: 1.55rem; }
+    .project-type {
+      display: inline-block;
+      padding: 5px 10px;
+      border-radius: 30px;
+      background: var(--sage);
+      color: var(--teal-dark);
+      font-size: .78rem;
+      font-weight: 800;
+      letter-spacing: .04em;
+      text-transform: uppercase;
+    }
+    .project-summary { max-width: 900px; color: #4f5e65; }
+    .subgrid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+      gap: 15px;
+      margin: 22px 0;
+    }
+    .subcard {
+      padding: 18px;
+      border: 1px solid var(--line);
+      border-radius: 11px;
+      background: #fbfcfb;
+    }
+    .subcard h4 { margin-bottom: 7px; color: var(--navy); font-size: 1rem; }
+    .subcard p { color: var(--muted); font-size: .94rem; }
+    .tag-list { display: flex; flex-wrap: wrap; gap: 7px; margin: 17px 0; }
+    .tag {
+      display: inline-block;
+      padding: 5px 10px;
+      border: 1px solid #d5e3df;
+      border-radius: 30px;
+      background: #f0f6f3;
+      color: #365f5a;
+      font-size: .82rem;
+      font-weight: 600;
+    }
+    .project-links { display: flex; flex-wrap: wrap; gap: 12px 20px; margin-top: 18px; }
+    .project-links a { font-weight: 700; }
+    ul.content-list { padding-left: 21px; margin: 9px 0 0; }
+    ul.content-list li { margin: 6px 0; }
+    .skills-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 15px;
+    }
+    .skill-card {
+      padding: 20px;
+      border: 1px solid var(--line);
+      border-radius: 12px;
+      background: white;
+    }
+    .skill-card h3 { color: var(--navy); font-size: 1.02rem; margin-bottom: 8px; }
+    .skill-card p { color: var(--muted); font-size: .94rem; }
+    footer {
+      padding: 28px 20px;
+      background: var(--navy);
+      color: #dce7e8;
+      text-align: center;
+    }
+    footer strong { color: white; }
+    footer p + p { margin-top: 4px; font-size: .9rem; color: #b8c8ca; }
 
+    @media (max-width: 760px) {
+      .header-inner { align-items: flex-start; flex-direction: column; gap: 8px; }
+      .main-nav { justify-content: flex-start; gap: 8px 16px; }
+      .hero { padding: 58px 22px 64px; }
+      main { padding: 38px 18px 54px; }
+      section { margin-bottom: 48px; }
+    }
+    @media (max-width: 480px) {
+      .main-nav a { font-size: .84rem; }
+      .tab-list { display: grid; grid-template-columns: 1fr 1fr; }
+      .tab-button { padding: 10px 8px; font-size: .85rem; }
+      .hero-actions .button { width: 100%; }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      html { scroll-behavior: auto; }
+      *, *::before, *::after { transition-duration: .01ms !important; }
+    }
   </style>
 </head>
 <body>
-<header>
-  <div class="brand">Computer Science ePortfolio</div>
-  <nav aria-label="Main navigation">
-    <a href="#self-assessment">Self-Assessment</a>
-    <a href="#code-review">Code Review</a>
-    <a href="#software">Software Engineering</a>
-    <a href="#algorithms">Algorithms</a>
-    <a href="#database">Databases</a>
-  </nav>
-</header>
-
-<div class="hero">
-  <h1>Computer Science Capstone Portfolio</h1>
-  <p>
-    Welcome to my Southern New Hampshire University Computer Science ePortfolio.
-    This portfolio reflects my development as a computer science student and presents
-    my work in software design and engineering, algorithms and data structures, and databases.
-  </p>
-  <a class="button" href="#self-assessment">Read My Self-Assessment</a>
-  <a class="button secondary" href="#artifacts">Explore My Artifacts</a>
-</div>
-
-<main>
-  <section id="self-assessment">
-    <p class="eyebrow">01 · Introduction</p>
-    <h2 class="section-heading">Professional Self-Assessment</h2>
-    <div class="self-assessment">
-      <p>
-        When I first started out in the computer science program, I felt very unsure about my
-        skills and how far I could get as a student. I thought that there were many others who had
-        far more experience and understanding than I did and it was very intimidating. As time went
-        on and I was introduced to more topics, I realized that I really had an interest in the work
-        I was doing and would go beyond just the assignments given and create my own projects.
-      </p>
-
-      <h3>Collaboration and Communication</h3>
-      <p>
-        My coursework created a solid foundation for understanding the possibilities of technology.
-        Collaborating in a team environment strengthened my interpersonal skills and helped prepare
-        me to contribute to a professional team. In my Agile methodology coursework, I learned to
-        create and understand requirements documents and communicate those requirements to others.
-        Exercises involving stakeholder communication helped me practice gathering requirements
-        and considering what people need from a software solution.
-      </p>
-
-      <h3>Software Engineering and Problem Solving</h3>
-      <p>
-        Learning about the software development lifecycle refined my approach to creating
-        applications. I moved from approaching applications without a clear plan toward gathering
-        requirements, planning, testing, and considering deployment and security. Understanding
-        why these steps matter has helped me think more deliberately about how software is built,
-        maintained, and used.
-      </p>
-
-      <h3>Security, Data, and Continued Learning</h3>
-      <p>
-        Security is an important consideration in my development work, particularly as I explore
-        information security alongside software development. My inventory application enhancement
-        gives me an opportunity to demonstrate how application functionality, authentication,
-        and database design can work together. I am continuing to strengthen my ability to explain
-        technical decisions and connect implementation choices to the needs of users.
-      </p>
-
-      <h3>How the Capstone Artifacts Fit Together</h3>
-      <p>
-        My capstone work centers on an inventory management application that began as an Android
-        application written in Java and is being enhanced as a Python application using SQLite.
-        The software engineering component presents the application redesign and implementation.
-        The algorithms and data structures component will explain the actual data-handling and
-        search logic used in the application. The database component will present the SQLite schema
-        and database operations. Together, these views are intended to show how application design,
-        program logic, and data persistence contribute to a complete software solution.
-      </p>
-
-      <div class="callout">
-        <h3 style="color:#fff; margin:0 0 8px;">Professional Goals</h3>
-        <p>
-          As I move into the technology field, I want to keep building practical software skills,
-          strengthen my security-conscious approach to development, and continue learning new
-          tools and techniques. I aim to create useful, maintainable solutions while communicating
-          clearly with teammates and the people who will use them.
-        </p>
-      </div>
+  <header class="site-header">
+    <div class="header-inner">
+      <a class="brand" href="#top">Joanna Higareda <span aria-hidden="true">|</span> Portfolio</a>
+      <nav class="main-nav" aria-label="Main navigation">
+        <a href="#about">About</a>
+        <a href="#code-review">Code Review</a>
+        <a href="#projects">Projects</a>
+        <a href="#skills">Technical Skills</a>
+      </nav>
     </div>
-  </section>
+  </header>
 
-  
-<section id="code-review">
-  <p class="eyebrow">02 · Walkthrough</p>
-  <h2 class="section-heading">Code Review</h2>
-  <p class="lead">
-    The code review features my original artifact version before enhancements along with suggested and planned improvements.
-  </p>
-
-  <div class="card">
-    <h3>Code Review Video</h3>
-
-    <div class="video-container">
-      <iframe
-        src="https://www.youtube.com/embed/ZbKSRdeBOOM"
-        title="CS-499 Informal Code Review"
-        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-        allowfullscreen>
-      </iframe>
+  <div class="hero" id="top">
+    <div class="hero-inner">
+      <p class="eyebrow">Computer Science · Information Security</p>
+      <h1>Building practical solutions through software and technology.</h1>
+      <p class="hero-copy">
+        Welcome to my computer science portfolio. This collection highlights my academic and
+        independent project work in application development, full-stack web technologies,
+        databases, algorithms, and secure software fundamentals.
+      </p>
+      <div class="hero-actions">
+        <a class="button" href="#projects">Explore Projects</a>
+        <a class="button secondary" href="#about">Read My Background</a>
+      </div>
     </div>
   </div>
-</section>
 
-
-  <section id="artifacts">
-    <p class="eyebrow">03 · Capstone Work</p>
-    <h2 class="section-heading">Artifacts and Enhancements</h2>
-
-    <div id="software" class="card" style="margin-bottom:18px;">
-      <h3>Software Design and Engineering</h3>
-      <p>
-        <strong>Artifact:</strong> Inventory management application, originally developed for Android
-        in Java and enhanced as a Python application using SQLite.
-      </p>
-      <div class="comparison">
-        <div>
-          <h3>Original Artifact</h3>
-          <p>The original Android application supported creating, adding, updating, and deleting inventory items.</p>
-          <p>
-  <a href="OriginalArtifacts.zip" download>
-    Download Original Android Project
-  </a>
+  <main>
+    <section id="about">
+      <p class="eyebrow">01 · Background</p>
+      <h2 class="section-heading">Professional Self-Assessment</h2>
+      <div class="panel">
+        <p>
+          When I first started the computer science program, I was unsure of my skills and how far
+          I could go. I assumed that many other students had much more experience, which made the
+          field feel intimidating at first. As I was introduced to new topics, I realized how much
+          I enjoyed the work. I often became interested in going beyond the assignments and
+          exploring how I could apply what I was learning to my own projects.
         </p>
-        </div>
-        <div>
-          <h3>Enhanced Artifact</h3>
-          <p>The enhanced version is being developed in Python with SQLite, including a login and inventory management functionality.</p>
+
+        <h3>Collaboration and Communication</h3>
+        <p>
+          My coursework helped me build a foundation for understanding how technology can solve
+          practical problems. Team-based assignments and Agile methodology exercises strengthened
+          my communication skills. I practiced working with requirements, considering stakeholder
+          needs, and explaining technical ideas so that a project could move forward with a shared
+          understanding of its goals.
+        </p>
+
+        <h3>Software Engineering and Problem Solving</h3>
+        <p>
+          Learning about the software development lifecycle changed how I approach application
+          development. Rather than jumping straight into code, I learned to think about
+          requirements, planning, design, implementation, testing, and maintenance. Building and
+          troubleshooting applications also taught me to break larger problems into smaller
+          pieces, follow data through an application, and use errors as evidence when identifying
+          the cause of an issue.
+        </p>
+
+        <h3>Security, Data, and Continued Learning</h3>
+        <p>
+          My Information Security concentration has helped me recognize the importance of
+          considering security alongside application functionality. Projects involving user
+          authentication, database operations, and protected application features have helped me
+          connect these concepts to software development. I am continuing to strengthen my
+          technical skills and become more confident learning unfamiliar tools and frameworks.
+        </p>
+
+        <h3>How My Projects Fit Together</h3>
+        <p>
+          My portfolio includes projects that demonstrate different parts of software development.
+          The inventory management application highlights application logic, database design, and
+          the process of translating an existing solution into another language. Travlr Getaways
+          demonstrates full-stack web development and the connection between a user interface,
+          server-side application, and database. Other projects give me opportunities to explore
+          data applications, algorithms, and security concepts.
+        </p>
+
+        <div class="highlight">
+          <h3>Professional Goals</h3>
           <p>
-  <a href="UpdatedArtifacts.zip" download>
-    Download Enhanced Python + SQLite Project
-  </a>
-</p>
+            As I move into the technology field, I want to continue building practical development
+            experience, improve my ability to design and maintain reliable applications, and
+            strengthen my security-conscious approach to problem solving. I value clear
+            communication, curiosity, and being willing to investigate a problem until I
+            understand it.
+          </p>
         </div>
       </div>
-      <h3>Enhancement Narrative</h3>
-    <div id="algorithms" class="card" style="margin-bottom:18px;">
-      <h3>Algorithms and Data Structures</h3>
-      <p>
-        The artifact included in this enhancement is the database helper class for an Android inventory management application. 
-        This artifact was created a few months ago in my Android application development course, where I learned how to develop apps using Android Studio.
-        I selected this artifact as a whole because it demonstrates my ability to create an application that provides innovative and efficient
-        technology to users while highlighting my software development techniques. The component that showcases my software development skills 
-        the most within the inventory management artifact is the structure and efficiency of the artifact. I kept good coding practices by gathering 
-        requirements, creating a plan, and writing code and testing before pushing it out. The artifact was improved by porting the database helper 
-        class from a Java-based class into a Python class that utilizes SQL for its database.
-        I did meet the course outcomes I planned in module one. I planned on porting the language 
-        from java android based to python based in order to show that I am able to design database 
-        in a vartiety of different environments and improve my codes efficiency. Through the enhancement of porting into Python I learned 
-        that different database operations remain pretty similar across different databases and languages, which makes it easier to 
-        understand how and why they work. One challenge I faced was converting the SQLite specific portions of code into MySql because of the difference in them.
-</p>
-<h3>Software Design and Engineering</h3>
-      <p>
-        The artifacts added to this milestone are the login activity and main activity classes for my Python-based inventory management application. 
-        These artifacts were originally created months ago as Java-based classes for an Android inventory management application. They control the 
-        various login features for the inventory management database, where users can access inventory operations for their account.
-        I am including these artifacts in my ePortfolio as they show my integration of security features in an application, as well as database integration 
-        for a software application. I think that showcasing all-around skills involved in software development will create a strong profile for myself 
-        in both cybersecurity and software engineering aspects. For my enhancement focusing on algorithms and data structures, I turned the original array 
-        list used for the inventory into a class. This was done for better calculation efficiency, as dictionary lookup by key has an average 
-        constant-time complexity of O(1), which makes this data structure more efficient for direct item lookups as the inventory grows. 
-        These enhancements meet the course outcomes previously planned, as they utilize more efficient algorithms and data structures to improve the 
-        functionality of the application. Making the application's functionality better allows for improved use by users, making their experience more 
-        seamless. One important thing I learned was that data structures should be selected based on how data needs to be accessed and manipulated. 
-        Changing the inventory representation from a list of formatted strings to a dictionary of structured records made the purpose of the data clearer 
-        and allowed individual inventory items to be accessed using their IDs. This was a bit of a struggle to translate from JavaScript to Python, 
-        but I was able to figure it out eventually.
-</p>
-      
-    </div>
-  </section>
+    </section>
 
-  <section id="skills">
-    <p class="eyebrow">04 · Technical Profile</p>
-    <h2 class="section-heading">Technical Skills</h2>
-    <div>
-      <span class="tag">Python</span>
-      <span class="tag">Java</span>
-      <span class="tag">SQL / SQLite</span>
-      <span class="tag">Object-Oriented Programming</span>
-      <span class="tag">Software Development Lifecycle</span>
-      <span class="tag">Database Design</span>
-      <span class="tag">Algorithms and Data Structures</span>
-      <span class="tag">Application Authentication</span>
-      <span class="tag">Git and GitHub</span>
-      <span class="tag">Testing and Debugging</span>
-    </div>
-  </section>
-</main>
+    <section id="code-review">
+      <p class="eyebrow">02 · Walkthrough</p>
+      <h2 class="section-heading">Code Review</h2>
+      <p class="lead">
+        This walkthrough introduces my original inventory application and discusses the code,
+        design decisions, and areas I considered during the enhancement process.
+      </p>
+      <div class="video-card">
+        <h3>CS-499 Informal Code Review</h3>
+        <div class="video-container">
+          <iframe
+            src="https://www.youtube.com/embed/ZbKSRdeBOOM"
+            title="CS-499 Informal Code Review"
+            loading="lazy"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            allowfullscreen>
+          </iframe>
+        </div>
+      </div>
+    </section>
 
-<footer>
-  <p><strong>Computer Science ePortfolio</strong></p>
-  <p>Southern New Hampshire University · CS-499 Capstone</p>
-</footer>
+    <section id="projects">
+      <p class="eyebrow">03 · Selected Work</p>
+      <div class="project-intro">
+        <div>
+          <h2 class="section-heading">Project Portfolio</h2>
+          <p class="lead">
+            Select a project to explore its purpose, technologies, and the skills demonstrated.
+            These projects were completed as part of academic coursework or personal technical
+            development.
+          </p>
+        </div>
+      </div>
+
+      <div class="tab-list" role="tablist" aria-label="Portfolio projects">
+        <button class="tab-button" id="tab-travlr" type="button" role="tab"
+          aria-selected="true" aria-controls="panel-travlr">Travlr Getaways</button>
+        <button class="tab-button" id="tab-inventory" type="button" role="tab"
+          aria-selected="false" aria-controls="panel-inventory" tabindex="-1">Inventory System</button>
+        <button class="tab-button" id="tab-grazioso" type="button" role="tab"
+          aria-selected="false" aria-controls="panel-grazioso" tabindex="-1">Data Dashboard</button>
+        <button class="tab-button" id="tab-pirate" type="button" role="tab"
+          aria-selected="false" aria-controls="panel-pirate" tabindex="-1">Pirate Agent AI</button>
+        <button class="tab-button" id="tab-security" type="button" role="tab"
+          aria-selected="false" aria-controls="panel-security" tabindex="-1">Security Project</button>
+      </div>
+
+      <article class="project-panel" id="panel-travlr" role="tabpanel" aria-labelledby="tab-travlr">
+        <div class="project-title-row">
+          <h3>Travlr Getaways — Full-Stack Web Application</h3>
+          <span class="project-type">Web Development</span>
+        </div>
+        <p class="project-summary">
+          Travlr Getaways is a full-stack travel application with a customer-facing website and
+          an administrative interface. I worked on connecting the frontend, server-side routes,
+          API, and database so that trip information could be retrieved and managed through the
+          application.
+        </p>
+        <div class="tag-list">
+          <span class="tag">JavaScript</span><span class="tag">TypeScript</span>
+          <span class="tag">Angular</span><span class="tag">Node.js</span>
+          <span class="tag">Express</span><span class="tag">MongoDB</span>
+          <span class="tag">Mongoose</span><span class="tag">HTML</span>
+          <span class="tag">CSS</span><span class="tag">REST API</span>
+          <span class="tag">JWT Authentication</span>
+        </div>
+        <div class="subgrid">
+          <div class="subcard">
+            <h4>Frontend</h4>
+            <p>
+              Developed and adapted Angular components for the administrative single-page
+              application, including trip listing and reusable trip-card functionality.
+            </p>
+          </div>
+          <div class="subcard">
+            <h4>Backend and Data</h4>
+            <p>
+              Worked with Node.js and Express routes/controllers, API endpoints, and MongoDB
+              data access through Mongoose.
+            </p>
+          </div>
+          <div class="subcard">
+            <h4>Security and Testing</h4>
+            <p>
+              Worked with admin login authentication and protected functionality, and tested
+              frontend-to-API communication involving GET and PUT operations.
+            </p>
+          </div>
+        </div>
+        <h3>Development Process and Problem Solving</h3>
+        <p>
+          A significant part of this project involved troubleshooting the connections between
+          the Angular application, Express server, and MongoDB database. I worked through
+          configuration, routing, component, and database connectivity issues while checking
+          that data moved correctly between application layers. This strengthened my
+          understanding of client-server architecture, reusable components, API integration,
+          and the importance of testing changes across the full application.
+        </p>
+        <h3>What This Project Demonstrates</h3>
+        <ul class="content-list">
+          <li>Understanding of full-stack application structure and data flow.</li>
+          <li>Experience building and adapting Angular components and services.</li>
+          <li>Server-side development using Node.js and Express.</li>
+          <li>Database integration using MongoDB and Mongoose.</li>
+          <li>Authentication concepts and protected administrative functionality.</li>
+          <li>Debugging and testing across frontend, backend, and database layers.</li>
+        </ul>
+      </article>
+
+      <article class="project-panel" id="panel-inventory" role="tabpanel"
+        aria-labelledby="tab-inventory" hidden>
+        <div class="project-title-row">
+          <h3>Inventory Management System</h3>
+          <span class="project-type">Application Development</span>
+        </div>
+        <p class="project-summary">
+          This project began as an Android inventory application written in Java and was
+          enhanced by translating its core application and database functionality into Python
+          with SQLite. The application includes user login and inventory-management features.
+        </p>
+        <div class="tag-list">
+          <span class="tag">Java</span><span class="tag">Android</span>
+          <span class="tag">Python</span><span class="tag">SQLite</span>
+          <span class="tag">SQL</span><span class="tag">OOP</span>
+          <span class="tag">Database Design</span>
+        </div>
+        <div class="subgrid">
+          <div class="subcard">
+            <h4>Original Application</h4>
+            <p>
+              The original Android application used Java and SQLiteOpenHelper to support
+              user accounts and inventory records, including adding items and updating
+              quantities.
+            </p>
+            <p class="project-links"><a href="OriginalArtifacts.zip" download>Download original Android project</a></p>
+          </div>
+          <div class="subcard">
+            <h4>Enhanced Application</h4>
+            <p>
+              The enhanced version uses Python and SQLite, with database helper functionality,
+              login features, and inventory-management operations.
+            </p>
+            <p class="project-links"><a href="UpdatedArtifacts.zip" download>Download enhanced Python project</a></p>
+          </div>
+        </div>
+        <h3>Software Design and Engineering</h3>
+        <p>
+          I selected this artifact because it gave me an opportunity to take an application I
+          had already developed and rebuild its core functionality in a different programming
+          environment. The enhancement involved translating the database helper and application
+          logic from Java/Android into Python while retaining the purpose of the inventory
+          system. This process helped me understand how similar database operations can be
+          implemented across different languages and development environments.
+        </p>
+        <h3>Algorithms and Data Structures</h3>
+        <p>
+          As part of the enhancement, I changed the way inventory information was represented.
+          Instead of keeping inventory data as a list of formatted strings, I used a dictionary
+          of structured records so items could be accessed by their identifiers. This made the
+          data easier to organize and reason about, and reinforced the importance of choosing
+          data structures based on how an application needs to retrieve and update information.
+        </p>
+        <h3>Database Design</h3>
+        <p>
+          The enhanced application uses SQLite for local data persistence. Working through the
+          language and database transition helped me compare database operations and understand
+          how application logic interacts with stored user and inventory information.
+        </p>
+        <h3>What This Project Demonstrates</h3>
+        <ul class="content-list">
+          <li>Translating application logic between Java and Python.</li>
+          <li>Relational database interaction and SQL operations.</li>
+          <li>User login and inventory-management workflows.</li>
+          <li>Using structured data and dictionaries for item lookup.</li>
+          <li>Debugging and adapting code across development environments.</li>
+        </ul>
+      </article>
+
+      <article class="project-panel" id="panel-grazioso" role="tabpanel"
+        aria-labelledby="tab-grazioso" hidden>
+        <div class="project-title-row">
+          <h3>Grazioso Salvare — Data Dashboard</h3>
+          <span class="project-type">Data Applications</span>
+        </div>
+        <p class="project-summary">
+          This project involved creating a Python-based data application that interacts with
+          MongoDB records and presents filtered information through a dashboard interface.
+          It provided experience moving from stored data to queries and a user-facing view.
+        </p>
+        <div class="tag-list">
+          <span class="tag">Python</span><span class="tag">MongoDB</span>
+          <span class="tag">PyMongo</span><span class="tag">JupyterDash</span>
+          <span class="tag">Data Filtering</span>
+        </div>
+        <h3>What This Project Demonstrates</h3>
+        <ul class="content-list">
+          <li>Connecting a Python application to a MongoDB database.</li>
+          <li>Querying and filtering records programmatically.</li>
+          <li>Presenting data through a dashboard-style interface.</li>
+          <li>Connecting database operations with information useful to an end user.</li>
+        </ul>
+      </article>
+
+      <article class="project-panel" id="panel-pirate" role="tabpanel"
+        aria-labelledby="tab-pirate" hidden>
+        <div class="project-title-row">
+          <h3>Pirate Agent — Reinforcement Learning</h3>
+          <span class="project-type">Artificial Intelligence</span>
+        </div>
+        <p class="project-summary">
+          This project explored reinforcement learning by developing an agent that learns
+          through interaction with an environment. The coursework introduced concepts used
+          in training an agent to make decisions based on rewards and experience.
+        </p>
+        <div class="tag-list">
+          <span class="tag">Python</span><span class="tag">Reinforcement Learning</span>
+          <span class="tag">Q-Learning</span><span class="tag">Deep Q-Networks</span>
+          <span class="tag">Experience Replay</span>
+        </div>
+        <h3>What This Project Demonstrates</h3>
+        <ul class="content-list">
+          <li>Foundational understanding of reinforcement-learning concepts.</li>
+          <li>Working with training parameters and agent-learning workflows.</li>
+          <li>Understanding how reward feedback and stored experience can influence decisions.</li>
+        </ul>
+      </article>
+
+      <article class="project-panel" id="panel-security" role="tabpanel"
+        aria-labelledby="tab-security" hidden>
+        <div class="project-title-row">
+          <h3>Spring Boot Security Exercise</h3>
+          <span class="project-type">Security Fundamentals</span>
+        </div>
+        <p class="project-summary">
+          This Java and Spring Boot coursework explored foundational application-security
+          concepts, including SHA-256 hashing and certificate-based secure communication.
+        </p>
+        <div class="tag-list">
+          <span class="tag">Java</span><span class="tag">Spring Boot</span>
+          <span class="tag">SHA-256</span><span class="tag">Certificates</span>
+          <span class="tag">Application Security</span>
+        </div>
+        <h3>What This Project Demonstrates</h3>
+        <ul class="content-list">
+          <li>Exposure to Java application development with Spring Boot.</li>
+          <li>Understanding the purpose of cryptographic hashing.</li>
+          <li>Familiarity with certificates and secure-communication concepts.</li>
+          <li>Connecting security principles to application development.</li>
+        </ul>
+      </article>
+    </section>
+
+    <section id="skills">
+      <p class="eyebrow">04 · Technical Profile</p>
+      <h2 class="section-heading">Technical Skills</h2>
+      <p class="lead">
+        Technologies and concepts represented across my coursework and portfolio projects.
+      </p>
+      <div class="skills-grid">
+        <div class="skill-card">
+          <h3>Programming Languages</h3>
+          <p>Python, Java, JavaScript, TypeScript, C++, SQL</p>
+        </div>
+        <div class="skill-card">
+          <h3>Web Development</h3>
+          <p>Angular, Node.js, Express, HTML, CSS, REST API concepts</p>
+        </div>
+        <div class="skill-card">
+          <h3>Databases</h3>
+          <p>SQLite, MongoDB, MySQL, SQL queries, data modeling, CRUD operations</p>
+        </div>
+        <div class="skill-card">
+          <h3>Tools and Environments</h3>
+          <p>Git, GitHub, Visual Studio, PyCharm, Android Studio</p>
+        </div>
+        <div class="skill-card">
+          <h3>Software Development</h3>
+          <p>Object-oriented programming, debugging, functional testing, SDLC, Agile fundamentals</p>
+        </div>
+        <div class="skill-card">
+          <h3>Security and Data</h3>
+          <p>Authentication concepts, access control fundamentals, data analysis, algorithms, data structures</p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <p><strong>Joanna Higareda</strong> · Computer Science Portfolio</p>
+    <p>Southern New Hampshire University · Computer Science Capstone</p>
+  </footer>
+
+  <script>
+    (() => {
+      const tabButtons = Array.from(document.querySelectorAll('[role="tab"]'));
+      const panels = Array.from(document.querySelectorAll('[role="tabpanel"]'));
+
+      function activateTab(selectedButton, moveFocus = false) {
+        tabButtons.forEach((button) => {
+          const selected = button === selectedButton;
+          button.setAttribute('aria-selected', String(selected));
+          button.tabIndex = selected ? 0 : -1;
+        });
+
+        panels.forEach((panel) => {
+          panel.hidden = panel.id !== selectedButton.getAttribute('aria-controls');
+        });
+
+        if (moveFocus) selectedButton.focus();
+      }
+
+      tabButtons.forEach((button, index) => {
+        button.addEventListener('click', () => activateTab(button));
+        button.addEventListener('keydown', (event) => {
+          let nextIndex = index;
+          if (event.key === 'ArrowRight') nextIndex = (index + 1) % tabButtons.length;
+          else if (event.key === 'ArrowLeft') nextIndex = (index - 1 + tabButtons.length) % tabButtons.length;
+          else if (event.key === 'Home') nextIndex = 0;
+          else if (event.key === 'End') nextIndex = tabButtons.length - 1;
+          else return;
+
+          event.preventDefault();
+          activateTab(tabButtons[nextIndex], true);
+        });
+      });
+    })();
+  </script>
 </body>
 </html>
+
